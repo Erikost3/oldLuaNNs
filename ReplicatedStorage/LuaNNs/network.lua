@@ -30,22 +30,13 @@ function Network.feedforward(net, input)
     for i = 1, #net.Weights do
         
         local layerA, layerB = net.Layers[i], net.Layers[i+1]
-		local weights = net.Weights[i]
-		local bias = net.Biases[i]
+	local weights = net.Weights[i]
+	local bias = net.Biases[i]
 
-        --print("Processing layer", i)
+	net.Outputs[i+1] = weights:dot(net.Outputs[i])
 
-        --print(weights, net.Outputs[i])
-
-        --for i,v in pairs(net.Weights) do
-        --    print(#v, #v[1])
-        --end
-
-		net.Outputs[i+1] = weights:dot(net.Outputs[i])
-		
-		net.Outputs[i+1] =  net.Outputs[i+1] + bias
-		net.Outputs[i+1] = layerB.Activation:activate(net.Outputs[i+1])
-
+	net.Outputs[i+1] =  net.Outputs[i+1] + bias
+	net.Outputs[i+1] = layerB.Activation:activate(net.Outputs[i+1])
     end
 
     net.Summary = _G.LuaNNs.Summary {Title = "Feedforward", ["Processing Time"] = os.clock()-start}
