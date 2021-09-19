@@ -7,7 +7,6 @@ _G.LuaNNs.Layer = require(script.layer)
 _G.LuaNNs.Losses = require(script.losses)
 _G.LuaNNs.Event = require(script.event)
 _G.LuaNNs.Network = require(script.network)
-_G.LuaNNs.Transformer = require(script.transformer)
 _G.LuaNNs.Summary = require(script.summary)
 
 ----------------------------------
@@ -20,7 +19,6 @@ LuaNNs.Matrix = _G.LuaNNs.Matrix
 LuaNNs.Activations = _G.LuaNNs.Activations
 LuaNNs.Layer = _G.LuaNNs.Layer
 LuaNNs.Losses = _G.LuaNNs.Losses
-LuaNNs.Transformer = _G.LuaNNs.Transformer
 LuaNNs.Network = _G.LuaNNs.Network
 
 ----------------------------------
